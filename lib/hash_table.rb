@@ -33,6 +33,9 @@ class HashTable
     end
   end
 
+  def put(key, value)
+  end
+
   def get(key)
     key.sum
   end
