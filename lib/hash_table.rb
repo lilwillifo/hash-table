@@ -33,7 +33,9 @@ class HashTable
     end
   end
 
-  def put(key, value)
+  #returns false if key already exists
+  def put (key, value)
+    !table.include?(key)
   end
 
   def get(key)
