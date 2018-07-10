@@ -1,6 +1,7 @@
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 require './lib/hash_table.rb'
 require './lib/linked_list.rb'
@@ -23,18 +24,16 @@ class HashTableTest < Minitest::Test
     assert_equal @hash.keys, expected
   end
 
-  def test_linked_list_array
-    @hash.linked_list_array.each do |ll|
-      assert_instance_of LinkedList, ll
-    end
-  end
-
   def test_it_has_table
     assert_nil @hash.table[0]
     assert_nil @hash.table[5]
     assert_nil @hash.table[6]
-    assert_equal @hash.table[9].length, 3
+    assert_instance_of LinkedList, @hash.table[9]
   end
+  #
+  # def test_it_returns_value_for_key
+  #   assert_equal @hash.get()
+  # end
 
   # def test_insert_adds_to_the_list
   #   added = @list.insert(50, "Here is some more data!")

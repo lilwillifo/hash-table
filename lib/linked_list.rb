@@ -1,7 +1,8 @@
 class LinkedList
-  attr_reader :value, :next_node
+  attr_reader :value, :next_node, :data
   def initialize(value, data)
     @value = value
+    @data = data
     @next_node = nil
   end
 

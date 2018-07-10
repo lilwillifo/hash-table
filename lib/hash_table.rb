@@ -1,3 +1,4 @@
+require 'pry'
 class HashTable
   def initialize(list, length=10)
     @list = list
@@ -10,10 +11,21 @@ class HashTable
     end
   end
 
-  def linked_list_array
-    pairs = keys.zip(@list)
-    pairs.map do |pair|
-      LinkedList.new(pair[0], pair[1])
+  def pairs
+    keys.zip(@list)
+  end
+
+  def table
+    table = Array.new(@length)
+    pairs.each do |pair|
+      index = pair.first
+      data = pair[1]
+      if table[index].nil?
+        table[index] = LinkedList.new(index, data)
+      else
+        table[index].insert(index, data)
+      end
     end
+    table
   end
 end
