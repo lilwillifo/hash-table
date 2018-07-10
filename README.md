@@ -1,3 +1,3 @@
 ### Hash Table Exercise
 
-This exercise works to build a Ruby hash from scratch.
+This exercise builds a hash table from scratch in Ruby.
