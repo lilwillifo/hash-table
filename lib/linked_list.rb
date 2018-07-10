@@ -7,6 +7,10 @@ class LinkedList
   end
 
   def insert(value, data)
-    @next_node = LinkedList.new(value, data)
+    if @next_node.nil?
+      @next_node = LinkedList.new(value, data)
+    else
+      @next_node.insert(value, data)
+    end
   end
 end
